@@ -86,6 +86,16 @@
 		width: 80em;
 	}
 
+	.clearfix:before,
+	.clearfix:after {
+	    content: " ";
+	    display: table
+	}
+
+	.clearfix:after {
+	    clear: both
+	}
+
 	@media screen and (max-width: 1680px) {
 
 		.container.\31 25\25 {
@@ -3617,6 +3627,104 @@
 		min-height: calc(100vh - 4.25em);
 		position: relative;
 	}
+
+	.post-content table,
+	.post-content table td,
+	.post-content table th,
+	.post-content img,
+	.post-content p {
+    text-align: justify
+	}
+
+	.table>thead>tr>th,
+	.post-content table>thead>tr>th,
+	.post-excerpt-home table>thead>tr>th,
+	.post-nav table>thead>tr>th {
+	    vertical-align: bottom;
+	    border-bottom: 2px solid #ddd
+	}
+
+	.table>caption+thead>tr:first-child>th,
+	.post-content table>caption+thead>tr:first-child>th,
+	.post-excerpt-home table>caption+thead>tr:first-child>th,
+	.post-nav table>caption+thead>tr:first-child>th,
+	.table>caption+thead>tr:first-child>td,
+	.post-content table>caption+thead>tr:first-child>td,
+	.post-excerpt-home table>caption+thead>tr:first-child>td,
+	.post-nav table>caption+thead>tr:first-child>td,
+	.table>colgroup+thead>tr:first-child>th,
+	.post-content table>colgroup+thead>tr:first-child>th,
+	.post-excerpt-home table>colgroup+thead>tr:first-child>th,
+	.post-nav table>colgroup+thead>tr:first-child>th,
+	.table>colgroup+thead>tr:first-child>td,
+	.post-content table>colgroup+thead>tr:first-child>td,
+	.post-excerpt-home table>colgroup+thead>tr:first-child>td,
+	.post-nav table>colgroup+thead>tr:first-child>td,
+	.table>thead:first-child>tr:first-child>th,
+	.post-content table>thead:first-child>tr:first-child>th,
+	.post-excerpt-home table>thead:first-child>tr:first-child>th,
+	.post-nav table>thead:first-child>tr:first-child>th,
+	.table>thead:first-child>tr:first-child>td,
+	.post-content table>thead:first-child>tr:first-child>td,
+	.post-excerpt-home table>thead:first-child>tr:first-child>td,
+	.post-nav table>thead:first-child>tr:first-child>td {
+	    border-top: 0
+	}
+
+	.table>tbody+tbody,
+	.post-content table>tbody+tbody,
+	.post-excerpt-home table>tbody+tbody,
+	.post-nav table>tbody+tbody {
+	    border-top: 2px solid #ddd
+	}
+
+	.table .table,
+	.post-content table .table,
+	.post-excerpt-home table .table,
+	.post-nav table .table,
+	.table .post-content table,
+	.post-content .table table,
+	.post-content table table,
+	.table .post-excerpt-home table,
+	.post-excerpt-home .table table,
+	.post-excerpt-home table table,
+	.table .post-nav table,
+	.post-nav .table table,
+	.post-nav table table {
+	    background-color: #f9f9f9
+	}
+	.panel>.table,
+	.post-content .panel>table,
+	.post-excerpt-home .panel>table,
+	.post-nav .panel>table,
+	.panel>.table-responsive>.table,
+	.post-content .panel>.table-responsive>table,
+	.post-excerpt-home .panel>.table-responsive>table,
+	.post-nav .panel>.table-responsive>table,
+	.panel>.panel-collapse>.table,
+	.post-content .panel>.panel-collapse>table,
+	.post-excerpt-home .panel>.panel-collapse>table,
+	.post-nav .panel>.panel-collapse>table {
+	    margin-bottom: 0
+	}
+
+	.panel>.table caption,
+	.post-content .panel>table caption,
+	.post-excerpt-home .panel>table caption,
+	.post-nav .panel>table caption,
+	.panel>.table-responsive>.table caption,
+	.post-content .panel>.table-responsive>table caption,
+	.post-excerpt-home .panel>.table-responsive>table caption,
+	.post-nav .panel>.table-responsive>table caption,
+	.panel>.panel-collapse>.table caption,
+	.post-content .panel>.panel-collapse>table caption,
+	.post-excerpt-home .panel>.panel-collapse>table caption,
+	.post-nav .panel>.panel-collapse>table caption {
+	    padding-left: 15px;
+	    padding-right: 15px
+	}
+
+
 
 		body.is-ie .post {
 			min-height: 0;
