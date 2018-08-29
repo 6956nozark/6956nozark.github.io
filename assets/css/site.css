@@ -5,7 +5,7 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
 html {
-    font-family: sans-serif;
+    /*font-family: sans-serif;*/
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
 }
@@ -335,7 +335,7 @@ html {
 }
 
 body {
-    font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.846;
     color: #1d1d1d;
@@ -454,7 +454,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
     font-weight: 400;
     line-height: 1.1;
     color: #444
@@ -876,7 +876,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: "Oxygen Mono", Menlo, Monaco, Consolas, "Courier New", monospace
+    font-family: "Lato", Arial, Helvetica, sans-serif;
 }
 
 code {
@@ -6675,7 +6675,7 @@ button.close {
     position: absolute;
     z-index: 1070;
     display: block;
-    font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
     font-size: 14px;
     font-weight: normal;
     line-height: 1.4;
@@ -6798,7 +6798,7 @@ button.close {
     display: none;
     max-width: 276px;
     padding: 1px;
-    font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: normal;
     line-height: 1.846;
@@ -8106,7 +8106,7 @@ h3,
 }
 
 .btn {
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-family: "Lato", Arial, Helvetica, sans-serif;
 }
 
 .parent-color {
@@ -8143,7 +8143,7 @@ h3,
 }
 
 .post-title-archive {
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
     font-weight: 700;
     margin-right: 1em
 }
@@ -8215,7 +8215,7 @@ pre code {
 .nav-tabs,
 .nav-pills,
 .pager {
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-family: "Lato", Arial, Helvetica, sans-serif;
 }
 
 @media (max-width: 767px) {
