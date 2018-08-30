@@ -6,6 +6,67 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+        <script>
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      var map;
+      var infowindow;
+
+      function initMap() {
+        var house = {lat: 42.007516, lng: -87.8225977};
+        
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: house,
+          zoom: 15
+        });
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: house
+          radius: 500,
+          type: ['store']
+        }, callback);
+      }
+
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }
+    </script>
 	</head>
 	<body>
 		<!-- Header -->
@@ -30,8 +91,10 @@
 						<h1>The Neighborhood</h1>
 						<!-- <p class="info">3 days ago by <a href="#">Jane Doe</a></p> -->
 					</header>
-					
-					<p><span class="image left"><img alt="Map" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2964.6627934804374!2d-87.82261377796276!3d42.00751193753431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sPublic+transit!5e0!3m2!1sen!2sus!4v1535556684717" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></img></span>This is a test.</p>
+					 <div id="map"></div>
+  					  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4iv3u41Qu4H36Sfn3-TcA76y26jMRD-c&libraries=places&callback=initMap" async defer></script>
+  
+					<!-- <p><span class="image left"><img alt="Map" src="https://www.google.com/maps/search/Public+transit/@42.0075119,-87.8226138,17z/data=!3m1!4b1" width="600" height="450" frameborder="0" style="border:0"></img></span>This is a test.</p> -->
 
 				</div>
 				<br>
