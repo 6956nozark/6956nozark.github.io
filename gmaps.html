@@ -58,7 +58,7 @@
         });
 
         google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.icon);
+          infowindow.setContent(place.url);
           infowindow.open(map, this);
         });
       }
