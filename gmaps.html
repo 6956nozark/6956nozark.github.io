@@ -26,7 +26,7 @@
       var infowindow;
 
       function initMap() {
-        var pyrmont = {lat: 42.0063604, lng: -87.8224097};
+        var pyrmont = {lat: 42.0071098, lng: -87.8228389};
 
         map = new google.maps.Map(document.getElementById('map'), {
           center: pyrmont,
@@ -38,7 +38,7 @@
         service.nearbySearch({
           location: pyrmont,
           radius: 1610,
-          type: ['restaurant']
+          type: ['schools OR restaurants OR transit OR grocery']
         }, callback);
       }
 
