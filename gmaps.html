@@ -51,14 +51,15 @@
       }
 
       function createMarker(place) {
-        var placeLoc = place.geometry.location;
         var marker = new google.maps.Marker({
           map: map,
           position: place.geometry.location
         });
+        var markerdetails = service.getdetails(marker.place_id)
 
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.setContent(place.name);
+          infowindow.setContent(markerdetails.url);
           infowindow.open(map, this);
         });
       }
