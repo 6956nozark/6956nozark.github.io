@@ -7,7 +7,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
-		<link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+	<style>
+#videoPlayer {
+ width: 100%;
+ height: 100%;
+}
+</style>
 	</head>
 	<body>
 		<!-- Header -->
@@ -32,30 +37,17 @@
 						<h1>The Neighborhood</h1>
 						<!-- <p class="info">3 days ago by <a href="#">Jane Doe</a></p> -->
 					</header>
-<!-- Hidden video div -->
-<div style="display:none;" id="video1">
-    <video class="lg-video-object lg-html5 video-js vjs-default-skin" controls preload="none">
-        <source src="https://content.jwplatform.com/videos/85NULZ8p-Om3e6rzI.mp4" type="video/mp4">
-         Your browser does not support HTML5 video.
-    </video>
+
+				<div id="videoContainer">
+   <video id="videoPlayer" controls autoplay>
+	<source id="mp4video" src="https://content.jwplatform.com/videos/85NULZ8p-Om3e6rzI.mp4" type="video/mp4"/>
+   </video>  
 </div>
-<div style="display:none;" id="video2">
-    <video class="lg-video-object lg-html5 video-js vjs-default-skin" controls preload="none">
-        <source src="https://content.jwplatform.com/videos/bfMCTPm3-Om3e6rzI.mp4" type="video/mp4">
-         Your browser does not support HTML5 video.
-    </video>
-</div>
- 
-<!-- data-src should not be provided when you use html5 videos -->
-<ul id="video-gallery">
-  <li data-poster="video-poster1.jpg" data-sub-html="video caption1" data-html="#video1" >
-      <img src="img/thumb1.jpg" />
-  </li>
-  <li data-poster="video-poster2.jpg" data-sub-html="video caption2" data-html="#video2" >
-      <img src="img/thumb2.jpg" />
-  </li>
-  ...
-</ul>
+
+<p>
+Videos and information courtesy of 
+<a href="https://chicago.suntimes.com/instagram/edison-park-dining-best-restaurants-things-to-do-parks-events-the-grid/" target="_blank">Chicago Sun Times</a>.
+</p>
 				</div>
 				<br>
 			</section>
@@ -72,9 +64,33 @@
 			<script src="https://www.w3schools.com/lib/w3.js"></script>
 			<script>
 				w3.includeHTML();
-				$('#video-gallery').lightGallery({
-    				videojs: true
-				}); 
+				$( document ).ready( function ( e ) {
+			var videoID = $('#videpPlayer');
+			var sourceID = $('#mp4video');
+			var videoList = ["https://content.jwplatform.com/videos/85NULZ8p-Om3e6rzI.mp4","https://content.jwplatform.com/videos/bfMCTPm3-Om3e6rzI.mp4"];
+			var i = 0;
+			
+			$('#videoPlayer').on('ended',function() {
+				if(i == videoList.length) {					
+					i = 0;
+					sourceID.attr('src',videoList[i]);
+					videoID.get(0).load();
+					videoID.get(0).play();
+				} else {
+					i++;
+					sourceID.attr('src',videoList[i]);
+					videoID.get(0).load();
+					videoID.get(0).play();
+				}
+			});
+
+			var is_safari = navigator.userAgent.indexOf("Safari") &gt; -1;
+			if(is_safari) {
+				document.getElementById('myvideo').play();
+			}
+
+		} );
+
 			</script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
