@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
+		<link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
 	</head>
 	<body>
 		<!-- Header -->
@@ -31,8 +32,29 @@
 						<h1>The Neighborhood</h1>
 						<!-- <p class="info">3 days ago by <a href="#">Jane Doe</a></p> -->
 					</header>
-					
-					<iframe src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDnuXjCndqpbV0StbAQh22RtO3oHh1NEew&q=Restaurants+Grocery+Schools+Parks+near+60631&center=42.007512,-87.82040899999998&zoom=16" width="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+					<!-- Hidden video div -->
+<div style="display:none;" id="video1">
+    <video class="lg-video-object lg-html5" controls preload="none">
+        <source src="https://content.jwplatform.com/videos/85NULZ8p-Om3e6rzI.mp4" type="video/mp4">
+         Your browser does not support HTML5 video.
+    </video>
+</div>
+<div style="display:none;" id="video2">
+    <video class="lg-video-object lg-html5" controls preload="none">
+        <source src="https://content.jwplatform.com/videos/bfMCTPm3-Om3e6rzI.mp4" type="video/mp4">
+         Your browser does not support HTML5 video.
+    </video>
+</div>
+ 
+<!-- data-src should not be provided when you use html5 videos -->
+<ul id="html5-videos">
+  <li data-poster="video-poster1.jpg" data-sub-html="video caption1" data-html="#video1" >
+      <img src="img/thumb1.jpg" />
+  </li>
+  <li data-poster="video-poster2.jpg" data-sub-html="video caption2" data-html="#video2" >
+      <img src="img/thumb2.jpg" />
+  </li>
+</ul>
 
 
 				</div>
@@ -51,12 +73,16 @@
 			<script src="https://www.w3schools.com/lib/w3.js"></script>
 			<script>
 				w3.includeHTML();
+				$('#video-gallery').lightGallery({
+    				videojs: true
+				}); 
 			</script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="http://vjs.zencdn.net/4.12/video.js"></script>
 
 	</body>
 </html>
