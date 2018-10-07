@@ -37,13 +37,15 @@
 						<h1>The Neighborhood</h1>
 						<!-- <p class="info">3 days ago by <a href="#">Jane Doe</a></p> -->
 					</header>
-
-				<div id="videoContainer">
+					<h3>The Grid: Exploring Edison Park</h3>
    <video id="videoPlayer" controls autoplay>
-	<source id="mp4video" src="https://content.jwplatform.com/videos/85NULZ8p-Om3e6rzI.mp4" type="video/mp4"/>
+	<source src="https://content.jwplatform.com/videos/85NULZ8p-Om3e6rzI.mp4" type="video/mp4"/>
    </video>  
-</div>
-
+<h3>The Grid: Things to do in Edison Park</h3>
+   <video id="videoPlayer" controls poster="/images/video_thumb.jpeg">
+	<source src="https://content.jwplatform.com/videos/bfMCTPm3-Om3e6rzI.mp4" type="video/mp4"/>
+   </video> 
+<br>
 <p>
 Videos and information courtesy of 
 <a href="https://chicago.suntimes.com/instagram/edison-park-dining-best-restaurants-things-to-do-parks-events-the-grid/" target="_blank">Chicago Sun Times</a>.
@@ -64,32 +66,6 @@ Videos and information courtesy of
 			<script src="https://www.w3schools.com/lib/w3.js"></script>
 			<script>
 				w3.includeHTML();
-				$( document ).ready( function ( e ) {
-			var videoID = $('#videpPlayer');
-			var sourceID = $('#mp4video');
-			var videoList = ["https://content.jwplatform.com/videos/85NULZ8p-Om3e6rzI.mp4","https://content.jwplatform.com/videos/bfMCTPm3-Om3e6rzI.mp4"];
-			var i = 0;
-			
-			$('#videoPlayer').on('ended',function() {
-				if(i == videoList.length) {					
-					i = 0;
-					sourceID.attr('src',videoList[i]);
-					videoID.get(0).load();
-					videoID.get(0).play();
-				} else {
-					i++;
-					sourceID.attr('src',videoList[i]);
-					videoID.get(0).load();
-					videoID.get(0).play();
-				}
-			});
-
-			var is_safari = navigator.userAgent.indexOf("Safari") &gt; -1;
-			if(is_safari) {
-				document.getElementById('myvideo').play();
-			}
-
-		} );
 
 			</script>
 			<script src="assets/js/jquery.min.js"></script>
